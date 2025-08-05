@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     [SerializeField]
     private Rigidbody rigid;
@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+    }
+    public void Damage()
+    {
+       
     }
 
 }
