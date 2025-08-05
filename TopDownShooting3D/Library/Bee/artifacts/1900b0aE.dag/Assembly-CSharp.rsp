@@ -386,6 +386,11 @@
 -analyzer:"D:/UnityHub/UnityDefaultInstallLocation/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/UnityHub/UnityDefaultInstallLocation/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"D:/UnityHub/UnityDefaultInstallLocation/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/Assets/Joystick Pack/Scripts/Base/Joystick.cs"
+"Assets/Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs"
+"Assets/Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
+"Assets/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
+"Assets/Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Player.cs"
 -langversion:9.0
