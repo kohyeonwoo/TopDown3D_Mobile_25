@@ -392,6 +392,7 @@
 "Assets/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/Scripts/Bullet.cs"
+"Assets/Scripts/FollowCamera.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/IDamageable.cs"
 "Assets/Scripts/Player.cs"

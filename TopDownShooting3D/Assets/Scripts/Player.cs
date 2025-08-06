@@ -14,6 +14,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private Animator animator;
 
+    public Transform muzzleLocation;
+
     [SerializeField]
     private float moveSpeed;
 
@@ -42,6 +44,19 @@ public class Player : MonoBehaviour, IDamageable
         }
 
     }
+
+    public void Shoot()
+    {
+        Debug.Log("플레이어 사격!!!!!!");
+
+        animator.SetBool("isShooting", true);
+    }
+
+    public void ShootEnd()
+    {
+        animator.SetBool("isShooting", false);
+    }
+
     public void Damage()
     {
        
