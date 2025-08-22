@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 6051441434353651166}
   m_Layer: 0
   m_Name: MainPlayer_Type1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,7 +443,12 @@ MonoBehaviour:
   rigid: {fileID: 0}
   joystick: {fileID: 0}
   animator: {fileID: 0}
+  muzzleLocation: {fileID: 3339423088104563247}
+  bulletPrefab: {fileID: 7826651575076060536, guid: bd42bf114041ec3459f466dc222bb039, type: 3}
+  poolObject: []
   moveSpeed: 3
+  bulletSpeed: 10
+  bulletLimit: 10
 --- !u!1 &2190805861174570754
 GameObject:
   m_ObjectHideFlags: 0

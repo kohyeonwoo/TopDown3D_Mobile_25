@@ -16,14 +16,24 @@ public class Player : MonoBehaviour, IDamageable
 
     public Transform muzzleLocation;
 
+    public GameObject bulletPrefab;
+
+    public List<GameObject> poolObject = new List<GameObject>();
+
     [SerializeField]
     private float moveSpeed;
+
+    public float bulletSpeed;
+
+    public int bulletLimit;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
 
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
+
+        CreatedPool();
     }
 
     private void FixedUpdate()
@@ -50,6 +60,18 @@ public class Player : MonoBehaviour, IDamageable
         Debug.Log("플레이어 사격!!!!!!");
 
         animator.SetBool("isShooting", true);
+
+        // GameObject bullets = Instantiate(bulletPrefab, muzzleLocation.position, muzzleLocation.rotation);
+        GameObject bullets = GetPoolObject();
+
+        if(bullets != null)
+        {
+            bullets.transform.position = muzzleLocation.position;
+            bullets.gameObject.SetActive(true);
+            bullets.GetComponent<Rigidbody>().velocity = muzzleLocation.transform.forward * bulletSpeed;
+        }
+
+       
     }
 
     public void ShootEnd()
@@ -57,9 +79,35 @@ public class Player : MonoBehaviour, IDamageable
         animator.SetBool("isShooting", false);
     }
 
-    public void Damage()
+    public void Damage(float Damage)
     {
        
+    }
+
+    private void CreatedPool()
+    {
+        for(int i =0; i < bulletLimit; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab);
+
+            bullet.SetActive(false);
+
+            poolObject.Add(bullet);
+        }
+    }
+
+    public GameObject GetPoolObject()
+    {
+
+        for(int i =0; i < poolObject.Count; i++)
+        {
+            if (!poolObject[i].activeInHierarchy)
+            {
+                return poolObject[i];
+            }
+        }
+
+        return null;
     }
 
 }
