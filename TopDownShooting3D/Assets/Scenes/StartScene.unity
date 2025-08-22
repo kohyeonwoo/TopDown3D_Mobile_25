@@ -175,6 +175,18 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1375578998}
+    - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
+      propertyPath: ammoLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
+      propertyPath: currentAmmo
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1217,7 +1229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmSound: []
-  sfxSound: []
+  sfxSound:
+  - name: RifleShot
+    clip: {fileID: 8300000, guid: 6b926705f74718f41b3f230dd93bf481, type: 3}
   bgmSource: {fileID: 1729680474}
   sfxSource: {fileID: 1359819404}
 --- !u!1660057539 &9223372036854775807

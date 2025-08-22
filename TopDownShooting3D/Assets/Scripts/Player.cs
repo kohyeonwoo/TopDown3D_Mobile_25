@@ -27,11 +27,17 @@ public class Player : MonoBehaviour, IDamageable
 
     public int bulletLimit;
 
+    public int currentAmmo;
+
+    public int ammoLimit;
+
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
 
         animator = GetComponent<Animator>();
+
+        currentAmmo = ammoLimit;
 
         CreatedPool();
     }
@@ -64,8 +70,10 @@ public class Player : MonoBehaviour, IDamageable
         // GameObject bullets = Instantiate(bulletPrefab, muzzleLocation.position, muzzleLocation.rotation);
         GameObject bullets = GetPoolObject();
 
-        if(bullets != null)
+        if(bullets != null && currentAmmo > 0)
         {
+            currentAmmo--;
+            SoundManager.Instance.PlaySFX("RifleShot");
             bullets.transform.position = muzzleLocation.position;
             bullets.gameObject.SetActive(true);
             bullets.GetComponent<Rigidbody>().velocity = muzzleLocation.transform.forward * bulletSpeed;
