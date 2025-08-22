@@ -395,6 +395,7 @@
 "Assets/Scripts/FollowCamera.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/IDamageable.cs"
+"Assets/Scripts/Item.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Sound.cs"
 "Assets/Scripts/SoundManager.cs"
