@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
 public class Player : MonoBehaviour, IDamageable
@@ -31,6 +32,10 @@ public class Player : MonoBehaviour, IDamageable
 
     public int ammoLimit;
 
+    public TextMeshProUGUI currentBulletText;
+
+    public TextMeshProUGUI maxBulletText;
+
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
@@ -40,6 +45,13 @@ public class Player : MonoBehaviour, IDamageable
         currentAmmo = ammoLimit;
 
         CreatedPool();
+    }
+
+    private void Update()
+    {
+        currentBulletText.text = currentAmmo.ToString();
+
+        maxBulletText.text = bulletLimit.ToString();
     }
 
     private void FixedUpdate()
