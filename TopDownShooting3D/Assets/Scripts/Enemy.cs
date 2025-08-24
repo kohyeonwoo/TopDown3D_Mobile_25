@@ -9,6 +9,41 @@ public class Enemy : MonoBehaviour, IDamageable
    
     public float currentHealth;
 
+    public Transform target;
+
+    public LayerMask ground;
+
+    public LayerMask player;
+
+    //주변 돌아다니는 부분 관련 변수
+
+    public Vector3 walkPoint;
+
+    private bool bWalkPointSet;
+
+    public float walkPountRange;
+
+    //
+
+    //공격 관련 변수
+
+    public float timeBetweenAttacks;
+
+    private bool alreadyAttacked;
+
+    //
+
+    //움직임 관련 상황 변수
+
+    public float sightRange;
+
+    public float attackRange;
+
+    public bool bPlayerInSightRange;
+
+    public bool bPlayerInAttackRange;
+
+    //
 
     public void Damage(float Damage)
     {

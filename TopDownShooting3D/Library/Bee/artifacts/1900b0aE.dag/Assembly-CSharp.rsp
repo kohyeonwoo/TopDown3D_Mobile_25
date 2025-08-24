@@ -396,6 +396,7 @@
 "Assets/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/Scripts/Bullet.cs"
+"Assets/Scripts/BulletEnemy.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/Enemy_Soldier1.cs"
 "Assets/Scripts/FollowCamera.cs"
