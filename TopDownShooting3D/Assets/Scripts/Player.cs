@@ -13,6 +13,9 @@ public class Player : MonoBehaviour, IDamageable
     private FixedJoystick joystick;
 
     [SerializeField]
+    private GameObject shootButton;
+
+    [SerializeField]
     private Animator animator;
 
     public Transform muzzleLocation;
@@ -36,8 +39,14 @@ public class Player : MonoBehaviour, IDamageable
 
     public TextMeshProUGUI maxBulletText;
 
+    public float maxHealth;
+
+    public float currentHealth;
+
     private void Start()
     {
+        currentHealth = maxHealth;
+
         rigid = GetComponent<Rigidbody>();
 
         animator = GetComponent<Animator>();
@@ -101,7 +110,31 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Damage(float Damage)
     {
-       
+        currentHealth -= Damage;
+
+        if(currentHealth <= 0)
+        {
+            Dead();
+        }
+
+    }
+
+    public void Dead()
+    {
+        animator.SetTrigger("Dead");
+
+        joystick.gameObject.SetActive(false);
+
+        shootButton.SetActive(false);
+
+        Destroy(this.gameObject, 2.0f);
+
+        Invoke("ActiveEndGamePanel", 1.9f);
+    }
+
+    public void ActiveEndGamePanel()
+    {
+        GameManager.Instance.endGamePanel.SetActive(true);
     }
 
     private void CreatedPool()

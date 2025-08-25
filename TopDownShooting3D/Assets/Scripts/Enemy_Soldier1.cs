@@ -144,7 +144,7 @@ public class Enemy_Soldier1 : Enemy
     {
         alreadyAttacked = false;
 
-        animator.SetBool("bMove", true);
+        //animator.SetBool("bMove", true);
     }
 
     private void OnDrawGizmosSelected()
