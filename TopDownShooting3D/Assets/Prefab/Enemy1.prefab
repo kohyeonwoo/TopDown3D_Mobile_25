@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7737259643217338439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7217384814548831345}
+  m_Layer: 0
+  m_Name: MuzzleLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7217384814548831345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7737259643217338439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.127, y: 0.021, z: 0.918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8769348053250379091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8769348053250773455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30,15 +61,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.3664207
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.29455686
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.93
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68,9 +99,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 30163b1f8e5905e4ca5f0f91e9732cb4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400540, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7217384814548831345}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       insertIndex: -1
@@ -85,6 +123,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -6555115114732859299}
   m_SourcePrefab: {fileID: 100100000, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
+--- !u!4 &8769348053250379091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400540, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
+  m_PrefabInstance: {fileID: 8769348053250773455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8769348053250807433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
@@ -150,8 +193,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 11
+  m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -176,3 +219,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  target: {fileID: 0}
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
+  player:
+    serializedVersion: 2
+    m_Bits: 64
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 5
+  timeBetweenAttacks: 1
+  sightRange: 6
+  attackRange: 5
+  bPlayerInSightRange: 0
+  bPlayerInAttackRange: 0
+  muzzleLocation: {fileID: 7217384814548831345}
+  bulletPrefab: {fileID: 7826651575076060536, guid: e08d42cb2db117f469de15167cef7d5f, type: 3}
+  poolObject: []
+  bulletLimit: 4
+  bulletSpeed: 0

@@ -448,10 +448,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1636233440291664145, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 2106094125968798749, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
       propertyPath: m_Name
       value: MainPlayer_Type1
@@ -500,18 +496,6 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1375578998}
-    - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
-      propertyPath: ammoLimit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
-      propertyPath: bulletSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
-      propertyPath: currentAmmo
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6051441434353651166, guid: c8cc0cc142b97874da477f0ffd9c36be, type: 3}
       propertyPath: maxBulletText
       value: 
@@ -1166,7 +1150,7 @@ GameObject:
   - component: {fileID: 704904739}
   - component: {fileID: 704904738}
   - component: {fileID: 704904742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3268,10 +3252,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8769348053243421871, guid: 2e4e0a8f3ccaaab4eb02c8baa0ac58cc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 30163b1f8e5905e4ca5f0f91e9732cb4, type: 2}
+    - target: {fileID: -6555115114732859299, guid: 2e4e0a8f3ccaaab4eb02c8baa0ac58cc, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6555115114732859299, guid: 2e4e0a8f3ccaaab4eb02c8baa0ac58cc, type: 3}
+      propertyPath: walkPointRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8769348053250378473, guid: 2e4e0a8f3ccaaab4eb02c8baa0ac58cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.3664207

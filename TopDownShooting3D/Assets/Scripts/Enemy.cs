@@ -19,9 +19,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public Vector3 walkPoint;
 
-    private bool bWalkPointSet;
+    protected bool bWalkPointSet;
 
-    public float walkPountRange;
+    public float walkPointRange;
 
     //
 
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public float timeBetweenAttacks;
 
-    private bool alreadyAttacked;
+    protected bool alreadyAttacked;
 
     //
 
@@ -45,6 +45,20 @@ public class Enemy : MonoBehaviour, IDamageable
 
     //
 
+    //총알 발사 부분 
+
+    public Transform muzzleLocation;
+
+    public GameObject bulletPrefab;
+
+    public List<GameObject> poolObject = new List<GameObject>();
+
+    public int bulletLimit;
+
+    public float bulletSpeed;
+
+    //
+
     public void Damage(float Damage)
     {
         currentHealth -= Damage;
@@ -56,6 +70,33 @@ public class Enemy : MonoBehaviour, IDamageable
             Dead();
         }
     }
+
+    public void CreatedPool()
+    {
+        for (int i = 0; i < bulletLimit; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab);
+
+            bullet.SetActive(false);
+
+            poolObject.Add(bullet);
+        }
+    }
+
+    public GameObject GetPoolObject()
+    {
+
+        for (int i = 0; i < poolObject.Count; i++)
+        {
+            if (!poolObject[i].activeInHierarchy)
+            {
+                return poolObject[i];
+            }
+        }
+
+        return null;
+    }
+
 
     public void Dead()
     {
