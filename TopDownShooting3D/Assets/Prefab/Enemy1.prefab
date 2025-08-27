@@ -61,15 +61,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.3664207
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29455686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -193,8 +193,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 11
-  m_Acceleration: 12
+  m_Speed: 7
+  m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -227,8 +227,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
-  timeBetweenAttacks: 1
+  walkPointRange: 1.25
+  timeBetweenAttacks: 5
   sightRange: 6
   attackRange: 5
   bPlayerInSightRange: 0
@@ -237,4 +237,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7826651575076060536, guid: e08d42cb2db117f469de15167cef7d5f, type: 3}
   poolObject: []
   bulletLimit: 4
-  bulletSpeed: 0
+  bulletSpeed: 5

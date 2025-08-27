@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject itemBox;
 
+    public GameObject enemyPrefab;
+
     public List<GameObject> obstacleList = new List<GameObject>();
 
     public List<GameObject> boxSpawnAreaList = new List<GameObject>();
+
+    public List<GameObject> enemySpawnAreaList = new List<GameObject>();
 
     //////////////////////-------------------------------------------------------
 
@@ -31,13 +35,30 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         
+        //각각의 오브젝트에 대한 난수 생성 
+
         int rand1 = Random.Range(0, obstacleList.Count);
+
+        int randBox = Random.Range(0, boxSpawnAreaList.Count);
+
+        int randEnemy = Random.Range(0, enemySpawnAreaList.Count);
+
+        //레벨 방해물 무작위 활성화 
 
         obstacleList[rand1].SetActive(true);
 
-        for(int i =0; i < boxSpawnAreaList.Count; i++)
+        //아이템 박스 무작위 생성 파트 
+
+        for (int i = 0; i < randBox; i++)
         {
-           Instantiate(itemBox, boxSpawnAreaList[i].transform.position , Quaternion.identity);
+            Instantiate(itemBox, boxSpawnAreaList[i].transform.position, Quaternion.identity);
+        }
+
+        //적 무작위 생성 파트 
+
+        for (int i = 0; i < randEnemy; i++)
+        {
+            Instantiate(enemyPrefab, enemySpawnAreaList[i].transform.position, Quaternion.identity);
         }
 
     }
