@@ -34,5 +34,12 @@ public class BulletEnemy : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Obstacle")
+        {
+            this.gameObject.SetActive(false);
+
+            Debug.Log("총알이 벽에 명중했습니다!!!");
+        }
     }
 }

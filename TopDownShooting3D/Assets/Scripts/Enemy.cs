@@ -67,6 +67,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if(currentHealth <= 0)
         {
+            GameManager.Instance.enemyUnitCount--;
+
             Dead();
         }
     }

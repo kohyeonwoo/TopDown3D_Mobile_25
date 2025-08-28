@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     //////////////////////-------------------------------------------------------
 
+    public int enemyUnitCount;
+
     private void Awake()
     {
         if(Instance == null)
@@ -34,7 +36,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+
+        enemyUnitCount = 0;
+
         //각각의 오브젝트에 대한 난수 생성 
 
         int rand1 = Random.Range(0, obstacleList.Count);
@@ -59,8 +63,18 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < randEnemy; i++)
         {
             Instantiate(enemyPrefab, enemySpawnAreaList[i].transform.position, Quaternion.identity);
+
+            enemyUnitCount++;
         }
 
+    }
+
+    private void Update()
+    {
+        if(enemyUnitCount <= 0)
+        {
+            endGamePanel.SetActive(true);
+        }
     }
 
     public void RestartGame()
