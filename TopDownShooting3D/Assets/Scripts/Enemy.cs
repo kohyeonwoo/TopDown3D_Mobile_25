@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public LayerMask player;
 
+    public ParticleSystem deadParticle;
+
     //주변 돌아다니는 부분 관련 변수
 
     public Vector3 walkPoint;
@@ -105,6 +107,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public void Dead()
     {
         Debug.Log("적이 사망했습니다.");
+
+        Instantiate(deadParticle, this.transform.position, Quaternion.identity);
 
         Destroy(this.gameObject);
     }
