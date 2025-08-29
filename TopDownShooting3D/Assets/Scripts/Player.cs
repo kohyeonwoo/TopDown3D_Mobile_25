@@ -121,6 +121,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Dead()
     {
+        SoundManager.Instance.PlaySFX("BulletHitSound");
+
         animator.SetTrigger("Dead");
 
         joystick.gameObject.SetActive(false);
@@ -134,6 +136,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public void ActiveEndGamePanel()
     {
+        SoundManager.Instance.PlaySFX("GameOverSound");
+
         GameManager.Instance.endGamePanel.SetActive(true);
     }
 
@@ -161,6 +165,11 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         return null;
+    }
+
+    public void PlayFootStepSound()
+    {
+        SoundManager.Instance.PlaySFX("FootStepSound");
     }
 
 }

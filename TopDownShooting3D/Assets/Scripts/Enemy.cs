@@ -63,6 +63,8 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         currentHealth -= Damage;
 
+        SoundManager.Instance.PlaySFX("BulletHitSound");
+
         Debug.Log("적이 총알에 맞고 피해를 입었습니다");
 
         if(currentHealth <= 0)

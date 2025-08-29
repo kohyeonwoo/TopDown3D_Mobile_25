@@ -147,6 +147,11 @@ public class Enemy_Soldier1 : Enemy
         //animator.SetBool("bMove", true);
     }
 
+    public void EnemyPlayFootStepSound()
+    {
+        SoundManager.Instance.PlaySFX("FootStepSound");
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

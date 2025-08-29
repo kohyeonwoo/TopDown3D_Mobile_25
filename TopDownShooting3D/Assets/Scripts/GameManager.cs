@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
 
         int rand1 = Random.Range(0, obstacleList.Count);
 
-        int randBox = Random.Range(0, boxSpawnAreaList.Count);
+        int randBox = Random.Range(1, boxSpawnAreaList.Count);
 
-        int randEnemy = Random.Range(0, enemySpawnAreaList.Count);
+        int randEnemy = Random.Range(1, enemySpawnAreaList.Count);
 
         //레벨 방해물 무작위 활성화 
 
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     {
         if(enemyUnitCount <= 0)
         {
-            endGamePanel.SetActive(true);
+            Invoke("ActiveEndGamePanel", 1.5f);
         }
     }
 
@@ -85,6 +85,11 @@ public class GameManager : MonoBehaviour
     public void BackMenu()
     {
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void ActiveEndGamePanel()
+    {
+        endGamePanel.SetActive(true);
     }
 
 }

@@ -2321,6 +2321,7 @@ MonoBehaviour:
   - {fileID: 490447950}
   - {fileID: 1025264217}
   - {fileID: 737340364}
+  enemyUnitCount: 0
 --- !u!1 &1167595734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,6 +4813,12 @@ MonoBehaviour:
   sfxSound:
   - name: RifleShot
     clip: {fileID: 8300000, guid: 6b926705f74718f41b3f230dd93bf481, type: 3}
+  - name: FootStepSound
+    clip: {fileID: 8300000, guid: b1968da45a5eb1a4ebe7eab44aec368b, type: 3}
+  - name: GameOverSound
+    clip: {fileID: 8300000, guid: 6696e7247c538e148ae598df8c3c649f, type: 3}
+  - name: BulletHitSound
+    clip: {fileID: 8300000, guid: 446bf38ed01517c469924ae5e9da1b88, type: 3}
   bgmSource: {fileID: 1729680474}
   sfxSource: {fileID: 1359819404}
 --- !u!1 &2107411543
